@@ -803,28 +803,108 @@ body.is-firefox .tt-heading.tt-heading-stroke .tt-heading-title {
 /* ------------------------------------------------------------- */
 
 #tt-header {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	color: #000000;
-	z-index: 999;
-	;
-	
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #000000;
+    z-index: 999;
 }
 
-/* header position fixed */
+/* Header position fixed */
 #tt-header.tt-header-fixed {
-	position: fixed;
+    position: fixed;
+    background-color: transparent;
+	/* height:18vh; */
+    transition: background-color 0.3s ease; /* Transition defined here */
 }
 
 /* header inner */
 .tt-header-inner {
 	width: 100%;
 	display: flex;
-	padding-top: 40px;
+	/* padding-top: 40px; */
 	align-items: center;
 }
+
+
+/* Hide desktop nav on mobile */
+.desktop-nav {
+  display: flex;
+  align-items:center;
+  gap: 30px;
+  height:100px;
+}
+
+.mobile-menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  padding-bottom:8px;
+}
+
+/* Mobile menu sidebar */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  color: white;
+  z-index: 1000;
+  padding: 30px 20px;
+  transition: left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  /* margin-top: 40px; */
+}
+
+.mobile-menu ul li {
+  margin-bottom: 20px;
+}
+
+.mobile-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.mobile-menu .close-btn {
+  font-size: 24px;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1068px) {
+ .desktop-nav {
+  height:115px;
+  padding-top:10px;
+}
+}
+
+@media screen and (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+
+   .desktop-nav {
+  height:115px;
+  padding-top:0px;
+}
+}
+
 
 .explore-btn{
 	background-color:black;
@@ -866,7 +946,8 @@ body.is-firefox .tt-heading.tt-heading-stroke .tt-heading-title {
 
 @media (max-width: 1024px) {
 	.tt-header-inner {
-		padding-top: 20px;
+		padding-top: 0px;
+		margin-top: -1rem
 	}
 	.explore-btn{
 	padding:14px 20px;
@@ -898,23 +979,49 @@ body:not(.tt-boxed) .tt-header-inner,
 .upperNavs{
 	font-size:32px;
 	font-weight:600;
+	display:flex;
+	gap:3rem;
 	color:white
+}
+
+.upperNavs{
+ list-style: none;
 }
 
 .tt-header-col:first-child {
 	margin-right: auto;
 }
 
-.main-page-hero {
+/* .main-page-hero {
   height: 100vh;
   width: 100%;
   background-image: url('/assets/img/portfolio/project-ph-3.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+} */
+
+.main-page-hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
 }
+
+
+.main-page-hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
 .des-content{
-	font-size:25px;
+	font-size:32px;
+	line-height:38px;
 	width:75%
 }
 .video-element{
@@ -923,11 +1030,16 @@ body:not(.tt-boxed) .tt-header-inner,
 
 
 @media (max-width: 768px) {
-  .upperNavs{
+ .tt-header-inner {
+		padding-top: 0px;
+		margin-top: 10px;
+	}
+	.upperNavs{
 	font-size:20px;
 }
 .des-content{
 	font-size:16px;
+	line-height:24px;
 	width:100%
 }
 }
@@ -945,7 +1057,7 @@ body:not(.tt-boxed) .tt-header-inner,
 =============== */
 .tt-logo {
 	position: absolute;
-	top: 40px;
+	top: 10px;
 	margin-right: auto;
 	line-height: 1;
 	pointer-events: initial;
@@ -959,7 +1071,7 @@ body:not(.tt-boxed) .tt-header-inner,
 }
 
 .tt-logo img {
-	max-height: 48px;
+	max-height: 80px;
 	/* You may need to change the img height to match your logo type! */
 }
 
@@ -971,12 +1083,19 @@ body:not(.tt-boxed) .tt-header-inner,
 /* Logo for small screens */
 @media (max-width: 1024px) {
 	.tt-logo {
-		top: 20px;
+		top: 10px;
 	}
 
 	.tt-logo img {
-		max-height: 42px;
+		max-height: 70px;
 		/* You may need to change the img height to match your logo type! */
+	}
+}
+
+/* Logo for small screens */
+@media (max-width: 768px) {
+	.tt-logo img {
+		max-height: 40px;
 	}
 }
 
@@ -2338,6 +2457,153 @@ a.ph-category:hover {
 	margin-top: 50px;
 }
 
+
+
+
+/* Base styles from your original body, adapted for the caption */
+.ph-caption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  color: #fff;
+}
+
+
+/* Style for each word */
+.word {
+  font-size: 10vw; /* Adjust size as needed, smaller than 15vw for readability */
+  display: inline-block;
+  /* color:white; */
+  margin: 0 0.5vw; /* Space between words */
+  transition: transform 0.2s; /* Smooth transition for animation */
+}
+
+/* Keyframe animations for press-down effect */
+@keyframes pressDown1 {
+  30%, 40%, 100% {
+    transform: translateY(0);
+  }
+  35% {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes pressDown2 {
+  70%, 80%, 100% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes pressDown3 {
+  30%, 40%, 100% {
+    transform: translateY(0);
+  }
+  35% {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes pressDown4 {
+  40%, 50%, 100% {
+    transform: translateY(0);
+  }
+  45% {
+    transform: translateY(20px);
+  }
+}
+
+/* Apply animations to each word */
+.word:nth-child(1) {
+  animation: pressDown1 2s infinite;
+}
+
+.word:nth-child(2) {
+  animation: pressDown2 3s infinite;
+}
+
+.word:nth-child(3) {
+  animation: pressDown3 2.5s infinite;
+}
+
+.word:nth-child(4) {
+  animation: pressDown4 3.2s infinite;
+}
+
+/* Preserve existing styles for ph-caption-title, ph-appear, animated-caption-title */
+.ph-caption-title {
+  /* Add any specific styles for ph-caption-title if needed */
+}
+
+.ph-appear {
+  /* Add any specific styles for ph-appear if needed */
+}
+
+.animated-caption-title {
+  /* Add any specific styles for animated-caption-title if needed */
+}
+
+/* Optional: If you want to keep the extra link styles */
+.jux-linx {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
+
+
+
+
+
+.project-section {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.project-item {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.project-item img {
+  width: 100%;
+  height:100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-item img:hover {
+  transform: scale(1.05);
+}
+
+
+
 .ph-caption>p:last-child {
 	margin-bottom: 0;
 }
@@ -2377,6 +2643,14 @@ a.ph-category:hover {
 		padding: 0;
 		margin: 15px 0 25px 0;
 	}
+	.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.project-heading {
+  font-size: 1.4rem;
+}
 }
 
 .project-info-list>ul>li:last-child {
@@ -6751,6 +7025,9 @@ video.tt-pn-video {
 }
 
 
+
+
+
 /* ------------------------------------------------------------- *
  * tt-Image
 /* ------------------------------------------------------------- */
@@ -6758,6 +7035,8 @@ video.tt-pn-video {
 .tt-image {
 	overflow: hidden;
 }
+
+
 
 /* tt-image fixed height */
 @media (min-width: 1025px) {
@@ -6770,6 +7049,9 @@ video.tt-pn-video {
 		object-position: 50% 50%;
 	}
 }
+
+
+
 
 
 /* ------------------------------------------------------------- *
@@ -9822,14 +10104,28 @@ body.tt-boxed .blog-single-inner.tt-wrap {
 .social-email{
 	background-color: black; 
 	color: white; 
-	padding:0 45px;
-	height: 200px; 
+	padding:20px 45px 0px;
+	height: auto; 
 	width: 100%; 
 	display: flex; 
+	flex-direction:row; 
 	justify-content: space-between; 
 	align-items: center; 
 	flex-wrap: wrap; 
 	font-weight: 600;
+}
+
+.social-email .left{
+	margin-top:0;
+	display:flex;
+	flex-direction:column;
+	text-align:start;
+}
+.social-email .right{
+	margin-top:0;
+	display:flex;
+	justify-content:start;
+	text-align:center;
 }
 
 body:not(.tt-boxed) .tt-footer-inner,
@@ -9882,9 +10178,15 @@ width:88%
 	color:black;
 	padding:15px
 }
+
+.service-des{
+	margin-top:0;
+}
+
 .down-section-para{
-	font-size:25px;
+	font-size:28px;
 	font-weight:600;
+	line-height:35px
 }
 
 /* For desktop only 
@@ -9893,7 +10195,7 @@ width:88%
 	#tt-footer {
 		padding: 30px 0;
 	}
-
+	
 	#tt-footer.footer-absolute {
 		position: absolute;
 		left: 0;
@@ -10031,12 +10333,46 @@ width:88%
 	}
 }
 
+.footer-bottom{
+	margin-top:-3rem
+}
+
+.social-email .left .email{
+	margin-top:-25px
+}
+
+.social-email .left h6{
+	font-size:1.5rem;
+	font-weight:600;
+}
+
+.social-email .right .links{
+font-size:1.5rem !important;
+	font-weight:600 !important;
+}
+
 /* For smaller screens only 
 ============================ */
 @media (max-width: 1024px) {
 	#tt-footer {
 		padding: 60px 0;
 	}
+	.social-email{
+		height:auto;
+		width:100%;
+		padding:0 20px !important;
+	}
+	.social-email .left h6{
+	font-size:1rem;
+}
+
+.social-email .right .links{
+font-size:1rem !important;
+}
+
+	.footer-bottom{
+	margin-top:-1.5rem
+}
 
 	.down-section-hero{
 	height: 50vh;
@@ -10048,6 +10384,7 @@ width:90%
 
 	.down-section-para{
 	font-size:18px;
+	line-height:25px
 }
 
 	.tt-footer-inner {
@@ -10158,4 +10495,51 @@ width:90%
 		margin: 25px 0;
 		/* Spacing mobile */
 	}
+	.service-des{
+	margin-top:-2rem;
+}
+.social-email{
+	padding:0px;
+	width: auto; 
+	display: flex;
+	flex-direction:column; 
+	justify-content: center; 
+	align-items: center; 
+	flex-wrap: wrap; 
+	}
+	.social-email div{
+	margin-top:-20px;
+	}
+.social-email h6{
+	font-size:20px;
+	}
+}
+@media (max-width: 600px) {
+	.social-email{
+		padding:0 10px !important;
+	}
+	.social-email .left .email{
+	margin-top:10px
+}
+	.social-email .right{
+		width:100%;
+	margin-top:-2rem;
+}
+.social-email .left{
+	width:100%;
+	flex-direction:row;
+	gap:10px;
+	justify-content:space-between;
+	text-align:center;
+}
+.social-email .right{
+	width:100%;
+	justify-content:space-between;
+}
+#tt-footer {
+		padding: 20px 0;
+	}
+	.down-section-content h3{
+	margin-top:-5rem;
+}
 }

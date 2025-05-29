@@ -97,7 +97,8 @@
 			<div class="ptr-preloader">
 				<div class="ptr-prel-content">
 					<!-- Hint: You may need to change the img height and opacity to match your logo type. You can do this from the "theme.css" file (find: ".ptr-prel-image"). -->
-					<img src="/assets/img/logo-light.jpg" class="ptr-prel-image tt-logo-light" alt="Logo">
+					<img src="/assets/img/logo-white-new.png" class="ptr-prel-image tt-logo-light" style="opacity: 1;"
+						alt="Logo">
 				</div> <!-- /.ptr-prel-content -->
 			</div> <!-- /.ptr-preloader -->
 		</div>
@@ -127,43 +128,57 @@
 				-->
 			<header id="tt-header" class="tt-header-fixed">
 				<div class="tt-header-inner">
-					<!-- add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag!). Note: additionally you can use prepared helper class "max-width-*" to add custom width to "tt-wrap". Example: "max-width-1500" (class "tt-wrap" is still required!). More info about helper classes can be found in the file "helper.css". -->
-
 					<div class="tt-header-col">
-
-						<!-- Begin logo 
-							================ -->
+						<!-- Begin logo -->
 						<div class="tt-logo">
 							<a href="index.html">
-								<!-- Hint: You may need to change the img height to match your logo type. You can do this from the "theme.css" file (find: ".tt-logo img"). -->
 								<img src="/assets/img/logo-white-new.png" class="tt-logo-light magnetic-item"
 									alt="Logo">
-								<!-- logo light -->
 								<img src="/assets/img/logo-white-new.jpg" class="tt-logo-dark magnetic-item" alt="Logo">
-								<!-- logo dark -->
 							</a>
 						</div>
 						<!-- End logo -->
-
-					</div> <!-- /.tt-header-col -->
+					</div>
 
 					<div class="tt-header-col">
-
-						<!-- Begin overlay menu toggle button -->
-						<div class="tt-header-col"
-							style="flex-grow: 1; display: flex; justify-content: flex-end; align-items: center;">
-							<nav>
-								<ul class="upperNavs"
-									style="display: flex; gap: 30px; list-style: none; margin: 0; padding: 0;">
+						<div style="flex-grow: 1; display: flex; justify-content: flex-end; align-items: center;">
+							<!-- Desktop Navigation -->
+							<nav class="desktop-nav" >
+								<ul class="upperNavs">
 									<li><a href="Services.html">Services</a></li>
 									<li><a href="Projets.html">Projets</a></li>
 									<li><a href="contact.html">Contact</a></li>
 								</ul>
 							</nav>
+
+							<!-- Mobile Menu Button -->
+							<div class="mobile-menu-icon" onclick="toggleMobileMenu()">☰</div>
 						</div>
-						<!-- End overlay menu toggle button -->
 
-
+						<!-- Mobile Slide-In Menu -->
+						<div id="mobileMenu" class="mobile-menu">
+							<div
+								style="display: flex; justify-content: space-between; width: 100%; position: relative;">
+								<div class="tt-logo" style="position: static;">
+									<a href="index.html">
+										<img src="/assets/img/logo-white-new.png" class="tt-logo-light magnetic-item"
+											alt="Logo">
+										<img src="/assets/img/logo-white-new.jpg" class="tt-logo-dark magnetic-item"
+											alt="Logo">
+									</a>
+								</div>
+								<div class="close-btn"
+									style="position: absolute; right: 0; top: -25px; font-size: 50px;"
+									onclick="toggleMobileMenu()">×</div>
+							</div>
+							<ul style="margin-top: 20px;">
+								<li><a href="Services.html">Services</a></li>
+								<li><a href="Projets.html">Projets</a></li>
+								<li><a href="contact.html">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
 			</header>
 			<!-- End header -->
 
@@ -190,6 +205,9 @@
 					-->
 				<div id="page-header"
 					class="main-page-hero ph-full ph-cap-xxlg ph-center ph-image-cropped ph-image-cover-2 ph-content-parallax">
+
+					<video autoPlay loop muted playsInline src="/assets/vids/Hervé.mp4" type="video/mp4"></video>
+
 					<div class="page-header-inner tt-wrap">
 
 						<!-- Begin page header image 
@@ -202,9 +220,14 @@
 							Use class "max-width-*" to set caption max width if needed. For example "max-width-1000". More info about helper classes can be found in the file "helper.css".
 							-->
 						<div class="ph-caption">
-							<h1 class="ph-caption-title ph-appear">Je crée des idées</h1>
-
+							<h1 style="color: white;" class="ph-caption-title ph-appear animated-caption-title">
+								<span style="color: white;" class="word">Je</span>
+								<span style="color: white;" class="word">crée</span>
+								<span style="color: white;" class="word">des</span>
+								<span style="color: white;" class="word">idées</span>
+							</h1>
 						</div>
+
 						<!-- End page header caption -->
 
 					</div> <!-- /.page-header-inner -->
@@ -319,7 +342,7 @@
 																	<!-- <img src="assets/img/portfolio/project-ph-1.jpg"
 																		alt="image"> -->
 																	<video class="video-element pgi-video" autoplay
-																		muted loop poster="preview.jpg">
+																		muted loop playsinline poster="preview.jpg">
 																		<source src="/assets/vids/Hervé.mp4"
 																			type="video/mp4">
 																	</video>
@@ -405,7 +428,7 @@
 																	<!-- <img src="assets/img/portfolio/project-ph-2.jpg"
 																		alt="image"> -->
 																	<video class="video-element pgi-video" autoplay
-																		muted loop poster="preview.jpg">
+																		muted loop playsinline poster="preview.jpg">
 																		<source src="/assets/vids/Tayo.mp4"
 																			type="video/mp4">
 																	</video>
@@ -489,7 +512,7 @@
 																	<!-- <img src="assets/img/portfolio/project-ph-6.jpg"
 																		alt="image"> -->
 																	<video class="video-element pgi-video" autoplay
-																		muted loop poster="preview.jpg">
+																		muted loop playsinline poster="preview.jpg">
 																		<source src="/assets/vids/MauriceLacroix.mp4"
 																			type="video/mp4">
 																	</video>
@@ -745,50 +768,96 @@
 					</div>
 
 
-					<div class="down-section-hero"></div>
-					<div style="display: flex; justify-content: center;">
+					<!-- <div class="down-section-hero"></div> -->
+					<!-- <div style="display: flex; justify-content: center;">
 						<div class="down-section-content">
 							<h3>Polomarco x Giff</h3>
 							<div class="down-section-card">
-								<div style="display: flex; align-items: center; gap: 20px;font-weight: 600;flex-wrap: wrap;">
+								<div
+									style="display: flex; align-items: center; gap: 20px;font-weight: 600;flex-wrap: wrap;">
 									<h5 style="font-weight: 600;">Services :</h5>
-									<p style="flex-grow: 1; text-align: center;">Réalisation, Direction Artistique, Casting, Caméra</p>
+									<p class="service-des" style="flex-grow: 1; text-align: center;">Réalisation,
+										Direction Artistique,
+										Casting, Caméra</p>
 								</div>
-								<p class="down-section-para" style="margin: 30px;">Je suis un créatif indépendant basé à Lausanne. Depuis plus de
+								<p class="down-section-para des-margin">Je suis un créatif indépendant basé à
+									Lausanne. Depuis plus de
 									dix
 									ans, je conçois
 									et réalise des contenus sur-mesure pour les entreprises, start-ups, agences ou
 									particuliers : vidéo, photo, design, communication digitale et réseaux sociaux</p>
 							</div>
 						</div>
-					</div>
+					</div> -->
+
+
+					<!-- <div class="project-section">
+						<h1 class="project-heading" style="color: black;">Découvrir d’autres projets</h1>
+
+						<div class="project-grid">
+							<div class="project-item"><img src="/assets/img/portfolio/project-ph-1.jpg" alt="Project 1">
+							</div>
+							<div class="project-item"><img src="/assets/img/portfolio/project-ph-2.jpg" alt="Project 2">
+							</div>
+							<div class="project-item"><img src="/assets/img/portfolio/project-ph-3.jpg" alt="Project 3">
+							</div>
+							<div class="project-item"><img src="/assets/img/portfolio/project-ph-4.jpg" alt="Project 4">
+							</div>
+							<div class="project-item"><img src="/assets/img/portfolio/project-ph-13 copy.jpg"
+									alt="Project 5">
+							</div>
+							<div class="project-item"><img src="/assets/img/portfolio/project-ph-6.jpg" alt="Project 6">
+							</div>
+							<div class="project-item"><img
+									src="/assets/img/portfolio/single-project/tayoimmo/tayoimmo-1.jpg" alt="Project 7">
+							</div>
+							<div class="project-item"><img
+									src="/assets/img/portfolio/single-project/tayoimmo/tayoimmo-2.jpg" alt="Project 8">
+							</div>
+							<div class="project-item"><img src="/assets/img/portfolio/project-ph-9.jpg" alt="Project 9">
+							</div>
+							<div class="project-item"><img src="/assets/img/portfolio/project-ph-10.jpg"
+									alt="Project 10"></div>
+							<div class="project-item"><img src="/assets/img/portfolio/project-ph-11.jpg"
+									alt="Project 11"></div>
+							<div class="project-item"><img src="/assets/img/portfolio/project-ph-12.jpg"
+									alt="Project 12"></div>
+						</div>
+					</div> -->
+
 
 
 					<!-- ======================
 					///// Begin tt-footer /////
 					=========================== -->
-					<footer id="tt-footer" style=" color: white; background-color: black;">
+					<!-- <footer id="tt-footer" style=" color: white; background-color: black;">
 						<div class="tt-footer-inner">
 
-							<!-- Begin footer column 
-							========================= -->
-							<div class="footer-col tt-align-center-left">
+							<div class="social-email">
+								<div class="left">
+									<h6>+41 78 305 56 26</h6>
+									<h6 class="email">contact@tomadigital.ch</h6>
+								</div>
+								<div class="right" style="display: flex; align-items: center;">
+									<h6><a class="links" href="">Instagram, </a></h6>
+									<h6><a class="links" href="">LinkedIn, </a></h6>
+									<h6><a class="links" href="">Vimeo</a></h6>
+								</div>
+							</div>
+
+							<div class="footer-bottom footer-col tt-align-center-left">
 								<div class="footer-col-inner">
 
-									<!-- You can use whatever button or link here -->
 									<div class="tt-btn tt-btn-link">
 										<a style="color: white;" href="#" class="scroll-to-top"
 											data-hover="Haut de la page">Haut de la
 											page</a>
 									</div>
 
-								</div> <!-- /.footer-col-inner -->
+								</div> 
 							</div>
-							<!-- Begin footer column -->
 
-							<!-- Begin footer column 
-							========================= -->
-							<div class="footer-col tt-align-center order-m-last">
+							<div class="footer-bottom footer-col tt-align-center order-m-last">
 								<div class="footer-col-inner">
 
 									<div class="tt-copyright">
@@ -796,13 +865,10 @@
 											class="tt-link">2025 TOMA DIGITAL</a>
 									</div>
 
-								</div> <!-- /.footer-col-inner -->
+								</div> 
 							</div>
-							<!-- Begin footer column -->
-
-							<!-- Begin footer column 
-							========================= -->
-							<div class="footer-col tt-align-center-right">
+							
+							<div class="footer-bottom footer-col tt-align-center-right">
 
 
 
@@ -821,11 +887,12 @@
 													class="magnetic-item" target="_blank" rel="noopener">Li.</a></li>
 
 										</ul>
-									</div> <!-- /.social-buttons -->
-								</div> <!-- /.social-buttons -->
-							</div> <!-- /.footer-social -->
+									</div> 
+								</div> 
+							</div> 
 
-						</div> <!-- /.footer-col-inner -->
+						</div> 
+					</footer> -->
 				</div>
 				<!-- Begin footer column -->
 
@@ -839,7 +906,7 @@
 		</div>
 		<!-- End scroll container -->
 
-		<div class="rotating-circle">
+		<!-- <div class="rotating-circle">
 			<svg viewBox="0 0 100 100" class="rotating-svg">
 				<defs>
 					<path id="circlePath" d="M50,50 m-35,0 a35,35 0 1,1 70,0 a35,35 0 1,1 -70,0" />
@@ -850,7 +917,7 @@
 					</textPath>
 				</text>
 			</svg>
-		</div>
+		</div> -->
 
 	</main>
 	<!-- End body inner -->
@@ -889,16 +956,102 @@
 	<script src="assets/js/theme.js"></script>
 
 
-	<script>
-		window.addEventListener('scroll', () => {
-			const header = document.getElementById('tt-header');
-			if (window.scrollY > 500) {
-				header.classList.add('is-unfixed');
+	<!--  -->
+
+
+	<!-- <script>
+		function toggleMobileMenu() {
+			const menu = document.getElementById('mobileMenu');
+			if (menu.style.left === '0px') {
+				menu.style.left = '-100%';
 			} else {
-				header.classList.remove('is-unfixed');
+				menu.style.left = '0px';
 			}
+		}
+	</script> -->
+
+
+	<script>
+		// Wait for all libraries to load
+		document.addEventListener('DOMContentLoaded', function () {
+			// Initialize after a slight delay to ensure smooth-scrollbar is ready
+			setTimeout(initNavbar, 1000);
 		});
+
+		function initNavbar() {
+			console.log("Navbar initialization started");
+			const navbar = document.querySelector('#tt-header');
+			if (!navbar) {
+				console.error("Navbar element not found!");
+				return;
+			}
+
+			// Check if smooth-scrollbar is being used
+			const scrollbar = Scrollbar.init ? Scrollbar.get(document.querySelector('#scroll-container')) : null;
+
+			// Set initial state
+			navbar.style.transition = 'background-color 0.3s ease';
+			navbar.style.backgroundColor = 'transparent';
+
+			function getScrollThreshold() {
+				// 100vh for screens > 1038px, 40vh for smaller screens
+				return window.innerWidth > 1038 ? window.innerHeight : window.innerHeight * 0.4;
+			}
+
+			function checkScroll() {
+				// Get scroll position from smooth-scrollbar if available, otherwise use window
+				const scrollY = scrollbar ? scrollbar.scrollTop :
+					window.scrollY ||
+					window.pageYOffset ||
+					document.documentElement.scrollTop;
+
+				const threshold = getScrollThreshold();
+				const vh = window.innerHeight;
+
+				console.log(`Scroll check: ${scrollY}px / Threshold: ${threshold}px (${window.innerWidth > 1038 ? '100vh' : '40vh'})`);
+
+				if (scrollY > threshold) {
+					navbar.style.backgroundColor = '#000000';
+					console.log('Setting background to black');
+				} else {
+					navbar.style.backgroundColor = 'transparent';
+					console.log('Setting background to transparent');
+				}
+			}
+
+			// Set up the appropriate event listener
+			if (scrollbar) {
+				// Use smooth-scrollbar's listener
+				scrollbar.addListener(checkScroll);
+				console.log("Using smooth-scrollbar listener");
+			} else {
+				// Fallback to native scroll events
+				window.addEventListener('scroll', checkScroll, { passive: true });
+				console.log("Using native scroll listener");
+			}
+
+			// Also check on resize
+			window.addEventListener('resize', function () {
+				checkScroll();
+			});
+
+			// Initial check
+			checkScroll();
+
+			// Re-check after animations complete
+			setTimeout(checkScroll, 1000);
+		}
+
+		// Mobile menu toggle remains the same
+		window.toggleMobileMenu = function () {
+			const mobileMenu = document.getElementById('mobileMenu');
+			if (mobileMenu) {
+				mobileMenu.style.left = (mobileMenu.style.left === '0px') ? '-100%' : '0px';
+			}
+		};
 	</script>
+
+
 
 
 
