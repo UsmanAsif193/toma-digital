@@ -90,7 +90,8 @@
 		************************************** -->
 	<main id="body-inner">
 
-		<!-- Begin page transition (do not remove!!!) ==== -->
+		<!-- Begin page transition (do not remove!!!) 
+			=========================== -->
 		<div id="page-transition">
 			<div class="ptr-overlay"></div>
 			<div class="ptr-preloader">
@@ -98,16 +99,21 @@
 					<!-- Hint: You may need to change the img height and opacity to match your logo type. You can do this from the "theme.css" file (find: ".ptr-prel-image"). -->
 					<img src="/assets/img/logo-white-new.png" class="ptr-prel-image tt-logo-light" style="opacity: 1;"
 						alt="Logo">
-					<img src="/assets/img/logo-white-new.png" class="ptr-prel-image tt-logo-light" style="opacity: 1;"
-						alt="Logo">
 				</div> <!-- /.ptr-prel-content -->
 			</div> <!-- /.ptr-preloader -->
 		</div>
-		
+		<!-- End page transition -->
+
+		<!-- Begin magic cursor 
+			======================== -->
 		<div id="magic-cursor">
 			<div id="ball"></div>
 		</div>
-		
+		<!-- End magic cursor -->
+
+		<!-- Begin noise background -->
+
+		<!-- End noise background -->
 
 
 		<!-- *****************************************
@@ -115,10 +121,14 @@
 			****************************************** -->
 		<div id="scroll-container">
 
+			<!-- ===================
+				///// Begin header /////
+				========================
+				* Use class "tt-header-fixed" to set header to fixed position.
+				-->
 			<header id="tt-header" class="tt-header-fixed">
 				<div class="tt-header-inner">
 					<div class="tt-header-col">
-						<!-- Begin logo -->
 						<!-- Begin logo -->
 						<div class="tt-logo">
 							<a href="index.html">
@@ -128,7 +138,6 @@
 							</a>
 						</div>
 						<!-- End logo -->
-					</div>
 					</div>
 
 					<div class="tt-header-col">
@@ -141,9 +150,6 @@
 									<li><a href="contact.html">Contact</a></li>
 								</ul>
 							</nav>
-
-							<!-- Mobile Menu Button -->
-							<div class="mobile-menu-icon" onclick="toggleMobileMenu()">☰</div>
 
 							<!-- Mobile Menu Button -->
 							<div class="mobile-menu-icon" onclick="toggleMobileMenu()">☰</div>
@@ -169,22 +175,16 @@
 								style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; align-items: start;">
 								<ul style="margin-top: 20px;">
 									<li><a href="Services.html">Services</a></li>
-									<li style="margin-top: -16px;"><a href="Projets.html">Projets</a></li>
+									<li style="margin-top: -16px;"><a  href="Projets.html">Projets</a></li>
 									<!-- <li><a href="contact.html">Contact</a></li> -->
 								</ul>
 								<div class=""
 									style="display: flex; flex-direction: column; align-items: start; gap: 10px;">
 									<h6 style="font-weight: 600; font-size: 20px;">contact@tomadigital.ch</h6>
 									<div style="display: flex; flex-direction: column; align-items: start;">
-										<h6
-											style="font-weight: 600;line-height: 15px; margin-top: -3px; font-size: 20px;">
-											<a href="">Instagram, </a></h6>
-										<h6
-											style="font-weight: 600;line-height: 15px; margin-top: -3px; font-size: 20px;">
-											<a href="">LinkedIn, </a></h6>
-										<h6
-											style="font-weight: 600;line-height: 15px; margin-top: -3px; font-size: 20px;">
-											<a href="">Vimeo</a></h6>
+										<h6 style="font-weight: 600;line-height: 15px; margin-top: -3px; font-size: 20px;"><a href="">Instagram, </a></h6>
+										<h6 style="font-weight: 600;line-height: 15px; margin-top: -3px; font-size: 20px;"><a href="">LinkedIn, </a></h6>
+										<h6 style="font-weight: 600;line-height: 15px; margin-top: -3px; font-size: 20px;"><a href="">Vimeo</a></h6>
 									</div>
 								</div>
 							</div>
@@ -209,9 +209,17 @@
 
 					<div class="page-header-inner tt-wrap">
 
-						<div class="ph-caption anim-pos"
-							style=" text-align: left; margin-left: 0; width: fit-content; display: flex; justify-content:start !important; align-items: start;">
-							<h2 class="ph-caption-title-anim" style="font-weight:500;">
+						<!-- Begin page header image 
+							============================= -->
+
+						<!-- End page header image -->
+
+						<!-- Begin page header caption
+							=============================== 
+							Use class "max-width-*" to set caption max width if needed. For example "max-width-1000". More info about helper classes can be found in the file "helper.css".
+							-->
+						<div class="ph-caption anim-pos" style=" text-align: left; margin-left: 0; width: fit-content; display: flex; justify-content:start !important; align-items: start;">
+							<h2 class="ph-caption-title-anim" style="font-weight:500;" >
 								I make <span class="sliding-words">
 									<span class="sliding-words-inner" s>
 										<span>ideas.</span>
@@ -227,21 +235,43 @@
 
 
 
-						
+						<!-- End page header caption -->
 
-					</div> 
+					</div> <!-- /.page-header-inner -->
+
+					<!-- Begin scroll down circle (you can change "data-offset" to set scroll top offset) 
+						============================== -->
+
+					<!-- End scroll down circle -->
+
 
 				</div>
 				<!-- End page header -->
 
 
+				<!-- *************************************
+					*********** Begin page content *********** 
+					************************************** -->
+
 				<div id="page-content">
 
+					<!-- =======================
+						///// Begin tt-section /////
+						============================ 
+						* You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
+						-->
 					<div class="tt-section">
 						<div class="tt-section-inner">
 
+
+
+							<!-- Begin portfolio grid (works combined with tt-Ggrid!)
+							-->
 							<div id="portfolio-grid" class="pgi-hover">
 
+
+								<!-- Begin tt-Grid
+									-->
 								<div class="tt-grid ttgr-layout-2 ttgr-gap-2">
 
 									<!-- description content -->
@@ -276,11 +306,26 @@
 										</p>
 									</div>
 
+									<!-- Begin tt-Ggrid top content 
+										================================ -->
+
+									<!-- End tt-Grid top content -->
+
+
+									<!-- Begin tt-Grid items wrap 
+										============================== -->
 									<div style="margin-top: 100px;" class="tt-grid-items-wrap isotope-items-wrap">
 
+										<!-- Begin tt-Grid item
+											======================== -->
 										<div class="tt-grid-item isotope-item people">
 											<div class="ttgr-item-inner">
 
+
+												<!-- Begin portfolio grid item 
+													===============================
+													* Use class "pgi-image-is-light" if needed, it makes the caption visible better if you use light image (only effect if "pgi-cap-inside" is enabled on "portfolio-grid"! Also no effect on small screens!).
+													-->
 												<div class="portfolio-grid-item">
 													<a href="Hervé.html" class=" pgi-image-wrap-video"
 														data-cursor="View<br>Project">
@@ -291,7 +336,6 @@
 																	<!-- <img src="assets/img/portfolio/project-ph-1.jpg"
 																		alt="image"> -->
 																	<video class="video-element pgi-video" autoplay
-																		muted loop playsinline poster="preview.jpg">
 																		muted loop playsinline poster="preview.jpg">
 																		<source src="/assets/vids/Hervé.mp4"
 																			type="video/mp4">
@@ -379,7 +423,6 @@
 																		alt="image"> -->
 																	<video class="video-element pgi-video" autoplay
 																		muted loop playsinline poster="preview.jpg">
-																		muted loop playsinline poster="preview.jpg">
 																		<source src="/assets/vids/Tayo.mp4"
 																			type="video/mp4">
 																	</video>
@@ -463,7 +506,6 @@
 																	<!-- <img src="assets/img/portfolio/project-ph-6.jpg"
 																		alt="image"> -->
 																	<video class="video-element pgi-video" autoplay
-																		muted loop playsinline poster="preview.jpg">
 																		muted loop playsinline poster="preview.jpg">
 																		<source src="/assets/vids/MauriceLacroix.mp4"
 																			type="video/mp4">
@@ -761,21 +803,6 @@
 	</script> -->
 
 
-	<!--  -->
-
-
-	<!-- <script>
-		function toggleMobileMenu() {
-			const menu = document.getElementById('mobileMenu');
-			if (menu.style.left === '0px') {
-				menu.style.left = '-100%';
-			} else {
-				menu.style.left = '0px';
-			}
-		}
-	</script> -->
-
-
 	<script>
 		// Wait for all libraries to load
 		document.addEventListener('DOMContentLoaded', function () {
@@ -847,10 +874,7 @@
 				mobileMenu.style.left = (mobileMenu.style.left === '0px') ? '-100%' : '0px';
 			}
 		};
-		};
 	</script>
-
-
 
 
 
