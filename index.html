@@ -98,6 +98,8 @@
 					<!-- Hint: You may need to change the img height and opacity to match your logo type. You can do this from the "theme.css" file (find: ".ptr-prel-image"). -->
 					<img src="/assets/img/logo-white-new.png" class="ptr-prel-image tt-logo-light" style="opacity: 1;"
 						alt="Logo">
+					<img src="/assets/img/logo-white-new.png" class="ptr-prel-image tt-logo-light" style="opacity: 1;"
+						alt="Logo">
 				</div> <!-- /.ptr-prel-content -->
 			</div> <!-- /.ptr-preloader -->
 		</div>
@@ -117,6 +119,7 @@
 				<div class="tt-header-inner">
 					<div class="tt-header-col">
 						<!-- Begin logo -->
+						<!-- Begin logo -->
 						<div class="tt-logo">
 							<a href="index.html">
 								<img src="/assets/img/logo-white-new.png" class="tt-logo-light magnetic-item"
@@ -125,6 +128,7 @@
 							</a>
 						</div>
 						<!-- End logo -->
+					</div>
 					</div>
 
 					<div class="tt-header-col">
@@ -137,6 +141,9 @@
 									<li><a href="contact.html">Contact</a></li>
 								</ul>
 							</nav>
+
+							<!-- Mobile Menu Button -->
+							<div class="mobile-menu-icon" onclick="toggleMobileMenu()">☰</div>
 
 							<!-- Mobile Menu Button -->
 							<div class="mobile-menu-icon" onclick="toggleMobileMenu()">☰</div>
@@ -285,6 +292,7 @@
 																		alt="image"> -->
 																	<video class="video-element pgi-video" autoplay
 																		muted loop playsinline poster="preview.jpg">
+																		muted loop playsinline poster="preview.jpg">
 																		<source src="/assets/vids/Hervé.mp4"
 																			type="video/mp4">
 																	</video>
@@ -371,6 +379,7 @@
 																		alt="image"> -->
 																	<video class="video-element pgi-video" autoplay
 																		muted loop playsinline poster="preview.jpg">
+																		muted loop playsinline poster="preview.jpg">
 																		<source src="/assets/vids/Tayo.mp4"
 																			type="video/mp4">
 																	</video>
@@ -454,6 +463,7 @@
 																	<!-- <img src="assets/img/portfolio/project-ph-6.jpg"
 																		alt="image"> -->
 																	<video class="video-element pgi-video" autoplay
+																		muted loop playsinline poster="preview.jpg">
 																		muted loop playsinline poster="preview.jpg">
 																		<source src="/assets/vids/MauriceLacroix.mp4"
 																			type="video/mp4">
@@ -751,6 +761,21 @@
 	</script> -->
 
 
+	<!--  -->
+
+
+	<!-- <script>
+		function toggleMobileMenu() {
+			const menu = document.getElementById('mobileMenu');
+			if (menu.style.left === '0px') {
+				menu.style.left = '-100%';
+			} else {
+				menu.style.left = '0px';
+			}
+		}
+	</script> -->
+
+
 	<script>
 		// Wait for all libraries to load
 		document.addEventListener('DOMContentLoaded', function () {
@@ -822,7 +847,10 @@
 				mobileMenu.style.left = (mobileMenu.style.left === '0px') ? '-100%' : '0px';
 			}
 		};
+		};
 	</script>
+
+
 
 
 
