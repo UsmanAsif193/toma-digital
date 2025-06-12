@@ -2058,6 +2058,7 @@
 
 	// zoom in
 	$(".anim-zoomin").each(function () {
+		
 
 		// Add wrap <div>.
 		$(this).wrap('<div class="anim-zoomin-wrap"></div>');
@@ -2083,6 +2084,41 @@
 			ScrollTrigger.refresh();
 		};
 	});
+
+
+	$(".anim-zoomin").each(function () {
+    var $this = $(this);
+    var $asiWrap = $this.parents(".portfolio-grid-item");
+
+    // Add wrap <div>.
+    $this.wrap('<div class="anim-zoomin-wrap"></div>');
+
+    // Add overflow hidden.
+    $this.parents(".anim-zoomin-wrap").css({ "overflow": "hidden" });
+
+    let tl_ZoomIn = gsap.timeline({
+        scrollTrigger: {
+            trigger: $asiWrap,
+            start: "top 90%",
+            markers: false,
+            onEnter: () => animZoomInRefresh(),
+        }
+    });
+
+    // Check if the parent has pgi-image-wrap-video class
+    if ($asiWrap.find(".pgi-image-wrap-video").length > 0) {
+        // Apply only scale animation for videos
+        tl_ZoomIn.from($this, { duration: 1.5, scale: 1.2, ease: Power2.easeOut, clearProps: "scale" });
+    } else {
+        // Apply full animation for images
+        tl_ZoomIn.from($this, { duration: 1.5, autoAlpha: 0, scale: 1.2, ease: Power2.easeOut, clearProps: "all" });
+    }
+
+    // Refresh start/end positions on enter.
+    function animZoomInRefresh() {
+        ScrollTrigger.refresh();
+    }
+});
 
 
 	// fade in-up

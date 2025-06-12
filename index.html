@@ -90,29 +90,22 @@
 		************************************** -->
 	<main id="body-inner">
 
-		<!-- Begin page transition (do not remove!!!) 
-			=========================== -->
+		<!-- Begin page transition (do not remove!!!) ==== -->
 		<div id="page-transition">
 			<div class="ptr-overlay"></div>
 			<div class="ptr-preloader">
 				<div class="ptr-prel-content">
 					<!-- Hint: You may need to change the img height and opacity to match your logo type. You can do this from the "theme.css" file (find: ".ptr-prel-image"). -->
-					<img src="/assets/img/logo-light.jpg" class="ptr-prel-image tt-logo-light" alt="Logo">
+					<img src="/assets/img/logo-white-new.png" class="ptr-prel-image tt-logo-light" style="opacity: 1;"
+						alt="Logo">
 				</div> <!-- /.ptr-prel-content -->
 			</div> <!-- /.ptr-preloader -->
 		</div>
-		<!-- End page transition -->
-
-		<!-- Begin magic cursor 
-			======================== -->
+		
 		<div id="magic-cursor">
 			<div id="ball"></div>
 		</div>
-		<!-- End magic cursor -->
-
-		<!-- Begin noise background -->
-
-		<!-- End noise background -->
+		
 
 
 		<!-- *****************************************
@@ -120,50 +113,77 @@
 			****************************************** -->
 		<div id="scroll-container">
 
-			<!-- ===================
-				///// Begin header /////
-				========================
-				* Use class "tt-header-fixed" to set header to fixed position.
-				-->
 			<header id="tt-header" class="tt-header-fixed">
 				<div class="tt-header-inner">
-					<!-- add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag!). Note: additionally you can use prepared helper class "max-width-*" to add custom width to "tt-wrap". Example: "max-width-1500" (class "tt-wrap" is still required!). More info about helper classes can be found in the file "helper.css". -->
-
 					<div class="tt-header-col">
-
-						<!-- Begin logo 
-							================ -->
+						<!-- Begin logo -->
 						<div class="tt-logo">
 							<a href="index.html">
-								<!-- Hint: You may need to change the img height to match your logo type. You can do this from the "theme.css" file (find: ".tt-logo img"). -->
 								<img src="/assets/img/logo-white-new.png" class="tt-logo-light magnetic-item"
 									alt="Logo">
-								<!-- logo light -->
 								<img src="/assets/img/logo-white-new.jpg" class="tt-logo-dark magnetic-item" alt="Logo">
-								<!-- logo dark -->
 							</a>
 						</div>
 						<!-- End logo -->
-
-					</div> <!-- /.tt-header-col -->
+					</div>
 
 					<div class="tt-header-col">
-
-						<!-- Begin overlay menu toggle button -->
-						<div class="tt-header-col"
-							style="flex-grow: 1; display: flex; justify-content: flex-end; align-items: center;">
-							<nav>
-								<ul class="upperNavs"
-									style="display: flex; gap: 30px; list-style: none; margin: 0; padding: 0;">
+						<div style="flex-grow: 1; display: flex; justify-content: flex-end; align-items: center;">
+							<!-- Desktop Navigation -->
+							<nav class="desktop-nav">
+								<ul class="upperNavs">
 									<li><a href="Services.html">Services</a></li>
 									<li><a href="Projets.html">Projets</a></li>
 									<li><a href="contact.html">Contact</a></li>
 								</ul>
 							</nav>
+
+							<!-- Mobile Menu Button -->
+							<div class="mobile-menu-icon" onclick="toggleMobileMenu()">☰</div>
 						</div>
-						<!-- End overlay menu toggle button -->
 
-
+						<!-- Mobile Slide-In Menu -->
+						<div id="mobileMenu" class="mobile-menu">
+							<div
+								style="display: flex; justify-content: space-between; width: 100%; position: relative;">
+								<div class="tt-logo" style="position: static;">
+									<a href="index.html">
+										<img src="/assets/img/logo-white-new.png" class="tt-logo-light magnetic-item"
+											alt="Logo">
+										<img src="/assets/img/logo-white-new.jpg" class="tt-logo-dark magnetic-item"
+											alt="Logo">
+									</a>
+								</div>
+								<div class="close-btn"
+									style="position: absolute; right: 0; top: -25px; font-size: 50px;"
+									onclick="toggleMobileMenu()">×</div>
+							</div>
+							<div
+								style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; align-items: start;">
+								<ul style="margin-top: 20px;">
+									<li><a href="Services.html">Services</a></li>
+									<li style="margin-top: -16px;"><a href="Projets.html">Projets</a></li>
+									<!-- <li><a href="contact.html">Contact</a></li> -->
+								</ul>
+								<div class=""
+									style="display: flex; flex-direction: column; align-items: start; gap: 10px;">
+									<h6 style="font-weight: 600; font-size: 20px;">contact@tomadigital.ch</h6>
+									<div style="display: flex; flex-direction: column; align-items: start;">
+										<h6
+											style="font-weight: 600;line-height: 15px; margin-top: -3px; font-size: 20px;">
+											<a href="">Instagram, </a></h6>
+										<h6
+											style="font-weight: 600;line-height: 15px; margin-top: -3px; font-size: 20px;">
+											<a href="">LinkedIn, </a></h6>
+										<h6
+											style="font-weight: 600;line-height: 15px; margin-top: -3px; font-size: 20px;">
+											<a href="">Vimeo</a></h6>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</header>
 			<!-- End header -->
 
@@ -174,87 +194,47 @@
 			<div id="content-wrap">
 
 
-				<!-- ========================
-					///// Begin page header /////
-					============================= 
-					* Use class "ph-full" to enable fullscreen size.
-					* Use class "ph-cap-sm", "ph-cap-lg", "ph-cap-xlg" or "ph-cap-xxlg" to set caption size (no class = default size).
-					* Use class "ph-center" to enable content center position.
-					* Use class "ph-bg-image" to enable page header background image (required for a portfolio single project!).
-					* Use class "ph-bg-image-is-light" if needed, it makes the elements dark and more visible if you use a very light image (effect only with class "ph-bg-image").
-					* Use class "ph-image-shadow" to enable page header background image (effect only with class "ph-bg-image").
-					* Use class "ph-image-cropped" to crop image. It fixes image dimensions (no effect for "ph-bg-image"!).
-					* Use class "ph-image-cover-*" to set image overlay opacity. For example "ph-image-cover-2" or "ph-image-cover-2-5" (up to "ph-image-cover-9-5").
-					* Use class "ph-content-parallax" to enable content parallax.
-					* Use class "ph-stroke" to enable caption title stroke style.
-					-->
+				<!-- -->
 				<div id="page-header"
 					class="main-page-hero ph-full ph-cap-xxlg ph-center ph-image-cropped ph-image-cover-2 ph-content-parallax">
+
+					<video autoPlay loop muted playsInline src="/assets/vids/Hervé.mp4" type="video/mp4"></video>
+
 					<div class="page-header-inner tt-wrap">
 
-						<!-- Begin page header image 
-							============================= -->
-
-						<!-- End page header image -->
-
-						<!-- Begin page header caption
-							=============================== 
-							Use class "max-width-*" to set caption max width if needed. For example "max-width-1000". More info about helper classes can be found in the file "helper.css".
-							-->
-						<div class="ph-caption">
-							<h1 class="ph-caption-title ph-appear">Je crée des idées</h1>
-
+						<div class="ph-caption anim-pos"
+							style=" text-align: left; margin-left: 0; width: fit-content; display: flex; justify-content:start !important; align-items: start;">
+							<h2 class="ph-caption-title-anim" style="font-weight:500;">
+								I make <span class="sliding-words">
+									<span class="sliding-words-inner" s>
+										<span>ideas.</span>
+										<span>video.</span>
+										<span>photo.</span>
+										<span>design.</span>
+										<span>concepts.</span>
+										<span>ideas.</span> <!-- Repeated for seamless loop -->
+									</span>
+								</span>
+							</h2>
 						</div>
-						<!-- End page header caption -->
 
-					</div> <!-- /.page-header-inner -->
 
-					<!-- Begin scroll down circle (you can change "data-offset" to set scroll top offset) 
-						============================== -->
 
-					<!-- End scroll down circle -->
+						
 
+					</div> 
 
 				</div>
 				<!-- End page header -->
 
 
-				<!-- *************************************
-					*********** Begin page content *********** 
-					************************************** -->
-
 				<div id="page-content">
 
-					<!-- =======================
-						///// Begin tt-section /////
-						============================ 
-						* You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
-						-->
 					<div class="tt-section">
 						<div class="tt-section-inner">
 
-
-
-							<!-- Begin portfolio grid (works combined with tt-Ggrid!)
-								========================== 
-								* Use class "pgi-hover" to enable portfolio grid item hover effect (behavior depends on "ttgr-gap-*" classes below!).
-								* Use class "pgi-cap-hover" to enable portfolio grid item caption hover effect (effect only with class "pgi-cap-inside"! Also no effect on mobile devices!).
-								* Use class "pgi-cap-center" to position portfolio grid item caption to center.
-								* Use class "pgi-cap-inside" to position portfolio grid item caption to inside.
-								-->
 							<div id="portfolio-grid" class="pgi-hover">
 
-
-								<!-- Begin tt-Grid
-									=================== 
-									* Use class "ttgr-layout-2", "ttgr-layout-3", "ttgr-layout-4" to set grid layout (columns). No class = one column.
-									* Use class "ttgr-layout-1-2", "ttgr-layout-2-1", "ttgr-layout-2-3", "ttgr-layout-3-2", "ttgr-layout-3-4" or "ttgr-layout-4-3" to set grid mixed layout (columns).
-									* Use class "ttgr-layout-creative-1" or "ttgr-layout-creative-2" to set grid creative mixed layout (no effect with classes "ttgr-portrait", "ttgr-portrait-half", "ttgr-not-cropped" and "ttgr-shifted").
-									* Use class "ttgr-portrait" or "ttgr-portrait-half" to enable portrait mode (no effect with classes "ttgr-layout-creative-1", "ttgr-layout-creative-2" and "ttgr-not-cropped").
-									* Use class "ttgr-gap-1", "ttgr-gap-2", "ttgr-gap-3", "ttgr-gap-4", "ttgr-gap-5" or "ttgr-gap-6" to add space between items.
-									* Use class "ttgr-not-cropped" to enable not cropped mode (effect only with classes "ttgr-layout-2", "ttgr-layout-3" and "ttgr-layout-4").
-									* Use class "ttgr-shifted" to enable shifted layout (effect only with classes "ttgr-layout-2", "ttgr-layout-3" and "ttgr-layout-4").
-									-->
 								<div class="tt-grid ttgr-layout-2 ttgr-gap-2">
 
 									<!-- description content -->
@@ -289,28 +269,13 @@
 										</p>
 									</div>
 
-									<!-- Begin tt-Ggrid top content 
-										================================ -->
+									<div style="margin-top: 100px;" class="tt-grid-items-wrap isotope-items-wrap">
 
-									<!-- End tt-Grid top content -->
-
-
-									<!-- Begin tt-Grid items wrap 
-										============================== -->
-									<div class="tt-grid-items-wrap isotope-items-wrap">
-
-										<!-- Begin tt-Grid item
-											======================== -->
 										<div class="tt-grid-item isotope-item people">
 											<div class="ttgr-item-inner">
 
-
-												<!-- Begin portfolio grid item 
-													===============================
-													* Use class "pgi-image-is-light" if needed, it makes the caption visible better if you use light image (only effect if "pgi-cap-inside" is enabled on "portfolio-grid"! Also no effect on small screens!).
-													-->
 												<div class="portfolio-grid-item">
-													<a href="Hervé.html" class="pgi-image-wrap"
+													<a href="Hervé.html" class=" pgi-image-wrap-video"
 														data-cursor="View<br>Project">
 														<!-- Use class "cover-opacity-*" to set image overlay if needed. For example "cover-opacity-2". Useful if class "pgi-cap-inside" is enabled on "portfolio-grid". Note: It is individual and depends on the image you use. More info about helper classes in file "helper.css". -->
 														<div class="pgi-image-holder">
@@ -319,7 +284,7 @@
 																	<!-- <img src="assets/img/portfolio/project-ph-1.jpg"
 																		alt="image"> -->
 																	<video class="video-element pgi-video" autoplay
-																		muted loop poster="preview.jpg">
+																		muted loop playsinline poster="preview.jpg">
 																		<source src="/assets/vids/Hervé.mp4"
 																			type="video/mp4">
 																	</video>
@@ -396,16 +361,16 @@
 													* Use class "pgi-image-is-light" if needed, it makes the caption visible better if you use light image (only effect if "pgi-cap-inside" is enabled on "portfolio-grid"! Also no effect on small screens!).
 													-->
 												<div class="portfolio-grid-item">
-													<a href="essentiel.html" class="pgi-image-wrap"
+													<a href="essentiel.html" class="pgi-image-wrap-video"
 														data-cursor="View<br>Project">
 														<!-- Use class "cover-opacity-*" to set image overlay if needed. For example "cover-opacity-2". Useful if class "pgi-cap-inside" is enabled on "portfolio-grid". Note: It is individual and depends on the image you use. More info about helper classes in file "helper.css". -->
 														<div class="pgi-image-holder">
 															<div class="pgi-image-inner anim-zoomin">
-																<figure class="pgi-image ttgr-height">
+																<figure class=" ttgr-height">
 																	<!-- <img src="assets/img/portfolio/project-ph-2.jpg"
 																		alt="image"> -->
 																	<video class="video-element pgi-video" autoplay
-																		muted loop poster="preview.jpg">
+																		muted loop playsinline poster="preview.jpg">
 																		<source src="/assets/vids/Tayo.mp4"
 																			type="video/mp4">
 																	</video>
@@ -480,7 +445,7 @@
 													* Use class "pgi-image-is-light" if needed, it makes the caption visible better if you use light image (only effect if "pgi-cap-inside" is enabled on "portfolio-grid"!).
 													-->
 												<div class="portfolio-grid-item">
-													<a href="mauricelacroix.html" class="pgi-image-wrap"
+													<a href="mauricelacroix.html" class="pgi-image-wrap-video"
 														data-cursor="View<br>Project">
 														<!-- Use class "cover-opacity-*" to set image overlay if needed. For example "cover-opacity-2". Useful if class "pgi-cap-inside" is enabled on "portfolio-grid". Note: It is individual and depends on the image you use. More info about helper classes in file "helper.css". -->
 														<div class="pgi-image-holder">
@@ -489,7 +454,7 @@
 																	<!-- <img src="assets/img/portfolio/project-ph-6.jpg"
 																		alt="image"> -->
 																	<video class="video-element pgi-video" autoplay
-																		muted loop poster="preview.jpg">
+																		muted loop playsinline poster="preview.jpg">
 																		<source src="/assets/vids/MauriceLacroix.mp4"
 																			type="video/mp4">
 																	</video>
@@ -636,28 +601,6 @@
 									<!-- End tt-Grid -->
 
 								</div>
-								<!-- End portfolio grid -->
-
-
-								<!-- Begin tt-pagination (uncomment below code if you want to use pagination)
-								========================= 
-								* Use class "tt-pagin-center" to align center.
-								-->
-								<!-- <div class="tt-pagination tt-pagin-center anim-fadeinup">
-									<div class="tt-pagin-prev">
-										<a href="" class="tt-pagin-item magnetic-item"><i class="fas fa-chevron-left"></i></a>
-									</div>
-									<div class="tt-pagin-numbers">
-										<a href="#0" class="tt-pagin-item magnetic-item active">1</a>
-										<a href="" class="tt-pagin-item magnetic-item">2</a>
-										<a href="" class="tt-pagin-item magnetic-item">3</a>
-										<a href="" class="tt-pagin-item magnetic-item">4</a>
-									</div>
-									<div class="tt-pagin-next">
-										<a href="" class="tt-pagin-item tt-pagin-next magnetic-item"><i class="fas fa-chevron-right"></i></a>
-									</div>
-								</div> -->
-								<!-- End tt-pagination -->
 
 							</div> <!-- /.tt-section-inner -->
 						</div>
@@ -736,96 +679,14 @@
 
 
 					<div class="social-email">
-						<h6>contact@tomadigital.ch</h6>
+						<h6 style="font-weight: 600;">contact@tomadigital.ch</h6>
 						<div style="display: flex; align-items: center;">
-							<h6><a href="">Instagram, </a></h6>
-							<h6><a href="">LinkedIn, </a></h6>
-							<h6><a href="">Vimeo</a></h6>
+							<h6 style="font-weight: 600;"><a href="">Instagram, </a></h6>
+							<h6 style="font-weight: 600;"><a href="">LinkedIn, </a></h6>
+							<h6 style="font-weight: 600;"><a href="">Vimeo</a></h6>
 						</div>
 					</div>
 
-
-					<div class="down-section-hero"></div>
-					<div style="display: flex; justify-content: center;">
-						<div class="down-section-content">
-							<h3>Polomarco x Giff</h3>
-							<div class="down-section-card">
-								<div style="display: flex; align-items: center; gap: 20px;font-weight: 600;flex-wrap: wrap;">
-									<h5 style="font-weight: 600;">Services :</h5>
-									<p style="flex-grow: 1; text-align: center;">Réalisation, Direction Artistique, Casting, Caméra</p>
-								</div>
-								<p class="down-section-para" style="margin: 30px;">Je suis un créatif indépendant basé à Lausanne. Depuis plus de
-									dix
-									ans, je conçois
-									et réalise des contenus sur-mesure pour les entreprises, start-ups, agences ou
-									particuliers : vidéo, photo, design, communication digitale et réseaux sociaux</p>
-							</div>
-						</div>
-					</div>
-
-
-					<!-- ======================
-					///// Begin tt-footer /////
-					=========================== -->
-					<footer id="tt-footer" style=" color: white; background-color: black;">
-						<div class="tt-footer-inner">
-
-							<!-- Begin footer column 
-							========================= -->
-							<div class="footer-col tt-align-center-left">
-								<div class="footer-col-inner">
-
-									<!-- You can use whatever button or link here -->
-									<div class="tt-btn tt-btn-link">
-										<a style="color: white;" href="#" class="scroll-to-top"
-											data-hover="Haut de la page">Haut de la
-											page</a>
-									</div>
-
-								</div> <!-- /.footer-col-inner -->
-							</div>
-							<!-- Begin footer column -->
-
-							<!-- Begin footer column 
-							========================= -->
-							<div class="footer-col tt-align-center order-m-last">
-								<div class="footer-col-inner">
-
-									<div class="tt-copyright">
-										© <a href="https://themetorium.net" target="_blank" rel="noopener"
-											class="tt-link">2025 TOMA DIGITAL</a>
-									</div>
-
-								</div> <!-- /.footer-col-inner -->
-							</div>
-							<!-- Begin footer column -->
-
-							<!-- Begin footer column 
-							========================= -->
-							<div class="footer-col tt-align-center-right">
-
-
-
-								<div class="footer-social">
-									<div class="footer-social-text"><span>Réseaux sociaux</span><i
-											class="fas fa-share-alt"></i>
-									</div>
-									<div class="social-buttons">
-										<ul>
-
-											<li><a style="color: white;" href="https://vimeo.com/user147383562"
-													class="magnetic-item" target="_blank" rel="noopener">Vi.</a></li>
-											<li><a style="color: white;" href="https://www.instagram.com/toma_entree4/"
-													class="magnetic-item" target="_blank" rel="noopener">In.</a></li>
-											<li><a style="color: white;" href="https://www.linkedin.com/in/tomadigital/"
-													class="magnetic-item" target="_blank" rel="noopener">Li.</a></li>
-
-										</ul>
-									</div> <!-- /.social-buttons -->
-								</div> <!-- /.social-buttons -->
-							</div> <!-- /.footer-social -->
-
-						</div> <!-- /.footer-col-inner -->
 				</div>
 				<!-- Begin footer column -->
 
@@ -836,20 +697,6 @@
 		</div>
 		<!-- End content wrap -->
 
-		</div>
-		<!-- End scroll container -->
-
-		<div class="rotating-circle">
-			<svg viewBox="0 0 100 100" class="rotating-svg">
-				<defs>
-					<path id="circlePath" d="M50,50 m-35,0 a35,35 0 1,1 70,0 a35,35 0 1,1 -70,0" />
-				</defs>
-				<text font-size="8" font-weight="bold">
-					<textPath href="#circlePath" startOffset="0%">
-						Je crée des idées • Je crée des idées • Je crée des idées •
-					</textPath>
-				</text>
-			</svg>
 		</div>
 
 	</main>
@@ -889,16 +736,95 @@
 	<script src="assets/js/theme.js"></script>
 
 
-	<script>
-		window.addEventListener('scroll', () => {
-			const header = document.getElementById('tt-header');
-			if (window.scrollY > 500) {
-				header.classList.add('is-unfixed');
+	<!--  -->
+
+
+	<!-- <script>
+		function toggleMobileMenu() {
+			const menu = document.getElementById('mobileMenu');
+			if (menu.style.left === '0px') {
+				menu.style.left = '-100%';
 			} else {
-				header.classList.remove('is-unfixed');
+				menu.style.left = '0px';
 			}
+		}
+	</script> -->
+
+
+	<script>
+		// Wait for all libraries to load
+		document.addEventListener('DOMContentLoaded', function () {
+			// Initialize after a slight delay to ensure smooth-scrollbar is ready
+			setTimeout(initNavbar, 1000);
 		});
+
+		function initNavbar() {
+			const navbar = document.querySelector('#tt-header');
+			if (!navbar) {
+				return;
+			}
+
+			// Check if smooth-scrollbar is being used
+			const scrollbar = Scrollbar.init ? Scrollbar.get(document.querySelector('#scroll-container')) : null;
+
+			// Set initial state
+			navbar.style.transition = 'background-color 0.3s ease';
+			navbar.style.backgroundColor = 'transparent';
+
+			function getScrollThreshold() {
+				// 100vh for screens > 1038px, 40vh for smaller screens
+				return window.innerWidth > 1038 ? window.innerHeight : window.innerHeight * 0.4;
+			}
+
+			function checkScroll() {
+				// Get scroll position from smooth-scrollbar if available, otherwise use window
+				const scrollY = scrollbar ? scrollbar.scrollTop :
+					window.scrollY ||
+					window.pageYOffset ||
+					document.documentElement.scrollTop;
+
+				const threshold = getScrollThreshold();
+				const vh = window.innerHeight;
+
+
+				if (scrollY > threshold) {
+					navbar.style.backgroundColor = '#000000';
+				} else {
+					navbar.style.backgroundColor = 'transparent';
+				}
+			}
+
+			// Set up the appropriate event listener
+			if (scrollbar) {
+				// Use smooth-scrollbar's listener
+				scrollbar.addListener(checkScroll);
+			} else {
+				// Fallback to native scroll events
+				window.addEventListener('scroll', checkScroll, { passive: true });
+			}
+
+			// Also check on resize
+			window.addEventListener('resize', function () {
+				checkScroll();
+			});
+
+			// Initial check
+			checkScroll();
+
+			// Re-check after animations complete
+			setTimeout(checkScroll, 1000);
+		}
+
+		// Mobile menu toggle remains the same
+		window.toggleMobileMenu = function () {
+			const mobileMenu = document.getElementById('mobileMenu');
+			if (mobileMenu) {
+				mobileMenu.style.left = (mobileMenu.style.left === '0px') ? '-100%' : '0px';
+			}
+		};
 	</script>
+
+
 
 
 
