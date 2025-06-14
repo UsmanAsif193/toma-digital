@@ -1018,9 +1018,24 @@ body:not(.tt-boxed) .tt-header-inner,
   width: 100%;
   overflow: hidden;
 }
+.main-page-hero2 {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
 
 
 .main-page-hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.main-page-hero2 video {
   position: absolute;
   top: 0;
   left: 0;
@@ -1039,6 +1054,21 @@ body:not(.tt-boxed) .tt-header-inner,
 	height:400px;
 }
 
+
+.services{
+	gap:0;
+}
+.services .text2{
+	text-align:center;
+}
+.hero-main-heading{
+	font-size:48px
+}
+
+.overlay-section p{
+	font-size:1.75rem;
+	line-height:2rem
+}
 
 @media (max-width: 768px) {
  .tt-header-inner {
@@ -1059,6 +1089,25 @@ body:not(.tt-boxed) .tt-header-inner,
   .main-page-hero {
   height: auto;
   width: 100%;
+}
+  .main-page-hero2 {
+  height: 70vh;
+  width: 100%;
+}
+.hero-main-heading{
+	font-size:40px
+}
+.services{
+	gap:20px;
+}
+}
+
+@media (max-width: 760px) {
+  .services .text2{
+	text-align:left;
+}
+.hero-main-heading{
+	font-size:30px
 }
 }
 
@@ -10460,3 +10509,138 @@ width:90%
 	margin-top:-5rem;
 }
 }
+
+
+
+.section-one{
+	/* height:80vh; */
+}
+
+.gallery-media-page2 {
+  display: grid;
+  gap: 10px;
+}
+
+/* Section 2: Two equal columns */
+.section-two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Section 3: 3 items per row */
+.section-three {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.gallery-media-page2 img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  object-fit: cover;
+}
+
+.section-four{
+	width:100%;
+}
+.section-four img{
+	object-fit:cover;
+	width:100%;
+	height:[70px]
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .section-two {
+    grid-template-columns: 1fr;
+  }
+
+  .section-three {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+.grid-container2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 2rem;
+}
+
+.grid-item2 {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 220px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background-image 0.3s ease;
+}
+
+/* Hide background image on hover */
+.grid-item2:hover {
+  background-image: none !important;
+}
+
+/* Overlay that appears with smooth bottom-to-top transition */
+.overlay2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  color: black;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* When hovering, make overlay visible and move it up */
+.grid-item2:hover .overlay2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Overlay heading and text animation */
+.overlay2 h6,
+.overlay2 p {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+/* Animate text into place on hover */
+.grid-item2:hover .overlay2 h6,
+.grid-item2:hover .overlay2 p {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Optional staggered effect for polish */
+.overlay2 h6 {
+  transition-delay: 0.1s;
+}
+
+.overlay2 p {
+  transition-delay: 0.2s;
+}
+
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .grid-container2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 2rem;
+}
+}
+
