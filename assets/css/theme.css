@@ -1057,12 +1057,19 @@ body:not(.tt-boxed) .tt-header-inner,
 
 .services{
 	gap:0;
+	font-size:30px;
+	font-weight:600;
+	padding: 40px 20px 10px 20px;
 }
 .services .text2{
 	text-align:center;
 }
 .hero-main-heading{
-	font-size:48px
+	font-size:70px
+}
+
+.seting-gallery{
+	gap:6px;
 }
 
 .overlay-section p{
@@ -1115,6 +1122,10 @@ body:not(.tt-boxed) .tt-header-inner,
 }
 
 @media (max-width: 760px) {
+	.services{
+	font-size:20px;
+	padding: 20px 20px 0px 20px;
+}
   .services .text2{
 	text-align:left;
 }
@@ -10524,52 +10535,68 @@ width:90%
 
 
 
-.section-one{
-	/* height:80vh; */
-}
-
 .gallery-media-page2 {
   display: grid;
   gap: 10px;
+  width: 100%;
 }
 
-/* Section 2: Two equal columns */
 .section-two {
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
 }
 
-/* Section 3: 3 items per row */
 .section-three {
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
 
+.section-last {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.wide-section-img {
+  grid-column: span 2;
+}
+
+.narrow-section-img {
+  grid-column: span 1;
+}
+
 .gallery-media-page2 img {
   width: 100%;
+  max-width: 100%;
   height: auto;
   border-radius: 8px;
   display: block;
   object-fit: cover;
-  height:100%
 }
 
-.section-four{
-	width:100%;
-}
-.section-four img{
-	object-fit:cover;
-	width:100%;
-	height:[70px]
+.section-four {
+  width: 100%;
 }
 
-/* Responsive for mobile */
+.section-four img {
+  object-fit: cover;
+  width: 100%;
+  border-radius: 8px;
+  height: auto;
+}
+
+/* Responsive Fixes */
 @media (max-width: 768px) {
-  .section-two {
+  .section-two,
+  .section-three,
+  .section-last {
     grid-template-columns: 1fr;
   }
 
-  .section-three {
-    grid-template-columns: 1fr;
+  .wide-section-img {
+    grid-column: span 1;
   }
 }
 
