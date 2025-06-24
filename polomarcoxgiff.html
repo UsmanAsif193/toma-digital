@@ -217,8 +217,12 @@
 								<p class="label"
 									style="width: fit-content; display: flex;flex-wrap: wrap; white-space: nowrap;color: black;">
 									Services :</p>
-								<p class="text2" style=" width: 100%; flex-grow: 1;color: black;">Réalisation, Direction
-									Artistique, Casting, Caméra</p>
+								<p class="text2" style=" width: 100%; flex-grow: 1;color: black;">
+									<span>Réalisation,</span>
+									<span>Direction Artistique,</span>
+									<span>Casting,</span>
+									<span>Caméra</span>
+								</p>
 							</div>
 						</div>
 					</div>
@@ -227,7 +231,8 @@
 
 				<!-- Overlay section -->
 				<div style="display: flex; justify-content: center;">
-					<div class="overlay-section" style="z-index: 9193849;color: black; width: 90%; padding: 70px 20px;">
+					<div class="overlay-section intro-section-page2"
+						style="z-index: 9193849;color: black; width: 90%; ">
 						<p>
 							L’agence de communication genevoise <strong>POLOMARCO</strong> m’a mandaté en express
 							pour
@@ -256,53 +261,54 @@
 			</div>
 
 			<!-- gallery section -->
-			<div style="display: flex; justify-content: center;">
-				<div style="width: 90%; display: flex; flex-direction: column; gap: 0px;">
-					<!-- sections 1 -->
-					<div class="section-one">
-						<a href="https://vimeo.com/875905845" target="_blank" style="width: 100%;">
-							<img src="/assets/img/page2/a1.png" style="width: 100%; border-radius: 8px;" alt="">
-						</a>
-					</div>
-					<!-- section 2 -->
-					<div class="section-two gallery-media-page2">
-						<img src="/assets/img/page2/a2.png" alt="Image 1" style="border-radius: 8px;" />
-						<img src="/assets/img/page2/a3.png" alt="Image 2" style="border-radius: 8px;" />
+			<div class="gallery-wrapper">
+				<div class="gallery-container">
+					<!-- Section 1 -->
+					<div class="section-one section-one-page2">
+						<div class="video-thumbnail-wrapper-page2" id="videoContainer">
+							<img src="/assets/img/page2/a1.png" alt="Video Thumbnail" class="video-thumbnail-page2" />
+							<div class="play-button" id="playButton"></div>
+						</div>
 					</div>
 
-					<!-- section 3 -->
-					<div class="section-three gallery-media-page2" style="margin-top: 10px;">
-						<img src="/assets/img/page2/a2.png" alt="Image 1" style="border-radius: 8px;" />
-						<img src="/assets/img/page2/a3.png" alt="Image 2" style="border-radius: 8px;" />
-						<img src="/assets/img/page2/a4.png" alt="Image 3" style="border-radius: 8px;" />
+					<!-- Section 2 -->
+					<div class="section-two gallery-media">
+						<img src="/assets/img/page2/a2.png" alt="Image 1" />
+						<img src="/assets/img/page2/a3.png" alt="Image 2" />
 					</div>
 
-					<!-- sections 4-->
-					<div class="section-four" style="margin-top: 10px;">
-						<img src="/assets/img/page2/a5.png" alt="" style="border-radius: 8px;">
-					</div>
-					
-
-					<!-- section 5 -->
-					<div class="section-two gallery-media-page2 seting-gallery" style="margin-top: 8px;  gap: 16px;">
-						<img src="/assets/img/page2/a6.png" style="object-fit: cover; border-radius: 8px;" alt="Image 1" />
-						<img src="/assets/img/page2/a8.png" style="object-fit: cover; border-radius: 8px;" alt="Image 2" class="last-image-style" />
+					<!-- Section 3 -->
+					<div class="section-three gallery-media">
+						<img src="/assets/img/page2/a2.png" alt="Image 1" />
+						<img src="/assets/img/page2/a3.png" alt="Image 2" />
+						<img src="/assets/img/page2/a4.png" alt="Image 3" />
 					</div>
 
-					<!-- section 6 -->
-					<div class="section-two gallery-media-page2" style="margin-top: 16px;  gap: 16px;">
+					<!-- Section 4 -->
+					<div class="section-four">
+						<img src="/assets/img/page2/a5.png" alt="Single Wide Image" />
+					</div>
+
+					<!-- Section 5 -->
+					<div class="section-two gallery-media">
+						<img src="/assets/img/page2/a6.png" alt="Image 1" />
+						<img src="/assets/img/page2/a8.png" alt="Image 2" />
+					</div>
+
+					<!-- Section 6 -->
+					<div class="section-two gallery-media">
 						<img src="/assets/img/page2/a9.png" alt="Image 1" />
 						<img src="/assets/img/page2/a5.png" alt="Image 2" />
 					</div>
 
-					<!-- section 7 -->
-					<div class="section-last gallery-media-page2" style="margin-top: 16px;  gap: 16px;">
+					<!-- Section 7 -->
+					<div class="section-last gallery-media">
 						<img src="/assets/img/page2/A7.png" class="wide-section-img" alt="Image 1" />
 						<img src="/assets/img/page2/a8.png" class="narrow-section-img" alt="Image 2" />
 					</div>
-
 				</div>
 			</div>
+
 
 			<!-- ew grid setions -->
 			<div style="display: flex; justify-content: center; padding: 100px 0px; ">
@@ -383,24 +389,21 @@
 								<p>Réalisation, Caméra</p>
 							</div>
 						</div>
-						<div class="grid-item2"
-							style="background-image: url('/assets/img/page2/d1.png');">
+						<div class="grid-item2" style="background-image: url('/assets/img/page2/d1.png');">
 							<div class="overlay2"
 								style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;align-items: start; padding: 0 10px;">
 								<h6 style="font-weight: 700;">Les Ateliers Hervé Schlüchter</h6>
 								<p>Réalisation, Caméra</p>
 							</div>
 						</div>
-						<div class="grid-item2"
-							style="background-image: url('/assets/img/page2/d2.png');">
+						<div class="grid-item2" style="background-image: url('/assets/img/page2/d2.png');">
 							<div class="overlay2"
 								style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;align-items: start; padding: 0 10px;">
 								<h6 style="font-weight: 700;">Les Ateliers Hervé Schlüchter</h6>
 								<p>Réalisation, Caméra</p>
 							</div>
 						</div>
-						<div class="grid-item2"
-							style="background-image: url('/assets/img/page2/d3.png');">
+						<div class="grid-item2" style="background-image: url('/assets/img/page2/d3.png');">
 							<div class="overlay2"
 								style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;align-items: start; padding: 0 10px;">
 								<h6 style="font-weight: 700;">Les Ateliers Hervé Schlüchter</h6>
@@ -547,6 +550,29 @@
 			}
 		};
 	</script>
+
+
+	<script>
+		const container = document.getElementById("videoContainer");
+		const playButton = document.getElementById("playButton");
+
+		container.addEventListener("click", function () {
+			const iframe = document.createElement("iframe");
+			iframe.setAttribute("src", "https://player.vimeo.com/video/875905845?autoplay=1");
+			iframe.setAttribute("frameborder", "0");
+			iframe.setAttribute("allow", "autoplay; fullscreen; picture-in-picture");
+			iframe.setAttribute("allowfullscreen", "true");
+			iframe.style.width = "100%";
+			iframe.style.height = "100%";
+			iframe.style.position = "absolute";
+			iframe.style.top = "0";
+			iframe.style.left = "0";
+
+			container.innerHTML = ""; // Remove thumbnail and play button
+			container.appendChild(iframe);
+		});
+	</script>
+
 
 </body>
 
