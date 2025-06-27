@@ -10635,7 +10635,7 @@ width:90%
   width: 100%;
 }
 
-.gallery-media img {
+.grid-item-page2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -10649,8 +10649,8 @@ width:90%
   width: 100%;
 }
 
-.section-one img,
-.section-four img {
+.section-one .grid-item-page2,
+.section-four .grid-item-page2 {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -10678,6 +10678,39 @@ width:90%
   grid-column: span 1;
 }
 
+/* Base wrapper for iframe */
+.iframe-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* default fallback, can be overridden */
+  overflow: hidden;
+  display: block;
+  position: relative;
+}
+
+.iframe-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border: none;
+}
+
+
+/* Section 2: 4:3 ratio */
+.section-two .iframe-wrapper {
+  aspect-ratio: 4 / 3;
+}
+
+/* Section 3: 1:1 ratio */
+.section-three .iframe-wrapper {
+  aspect-ratio: 1 / 1;
+}
+
+/* Section 7 (last): Wide format e.g., 21:9 */
+.section-last .iframe-wrapper {
+  aspect-ratio: 21 / 9;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
 	.section-two,
@@ -10687,15 +10720,19 @@ width:90%
   flex-direction:column;
   gap:14px;
 }
-  /* .section-two,
-  .section-three,
-  .section-last {
-    grid-template-columns: 1fr;
-  } */
+.iframe-wrapper {
+    aspect-ratio: auto; /* removes enforced aspect ratio */
+    height: 100%;
+	width:100%;       /* allows iframe to grow naturally */
+  }
 
-  /* .wide-section-img {
-    grid-column: span 1;
-  } */
+  .iframe-wrapper iframe {
+    aspect-ratio: auto;
+    height: 100%;
+	width:100%;
+  }
+
+  
 }
 
 
